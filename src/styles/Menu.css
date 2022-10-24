@@ -21,6 +21,24 @@
     border-radius: 10px;
 }
 
+.menu-item-interno{
+    margin-left: 1%;
+    margin-right: 1%;
+    padding: 1%;
+    text-align: center;
+    color: #f0f0f0;
+    border-radius: 10px;
+}
+
+.menu-espaco{
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 20px;
+    text-align: center;
+    color: #f0f0f0;
+    border-radius: 10px;
+}
+
 .menu-item:active{
     background-color: #336e80;
 }
