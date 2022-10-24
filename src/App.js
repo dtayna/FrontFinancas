@@ -1,24 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import './components/Geral.css'
+import { PaginaSobre } from './components/PaginaSobre';
+import { PaginaLogin } from './components/PaginaLogin';
+import { PaginaCadastro} from './components/PaginaCadastro';
+import { PaginaExterna} from './components/PaginaExterna';
+import { MenuExterno } from "./components/MenuExterno";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PaginaExterna/>
   );
 }
 

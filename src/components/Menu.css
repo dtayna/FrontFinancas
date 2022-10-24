@@ -1,0 +1,26 @@
+.menu-style{
+    background-color: #3e879e;
+    height: 70px;
+    padding: 1%;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.menu-item{
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 1%;
+    text-align: center;
+    color: #f0f0f0;
+    border-radius: 10px;
+}
+
+.menu-item:active{
+    background-color: #336e80;
+}
