@@ -12,7 +12,7 @@ import {
   Link
 } from "react-router-dom";
 
-import './Menu.css';
+import '../styles/Menu.css';
 
 export function MenuExterno() {
   

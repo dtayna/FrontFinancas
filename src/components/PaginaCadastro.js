@@ -1,10 +1,9 @@
-import './Geral.css'
+import '../styles/Geral.css';
 import React, { ReactNode, useState } from "react";
 import { isDOMComponent } from "react-dom/test-utils";
 import { useForm } from "react-hook-form";
 import { MenuExterno } from './MenuExterno';
 import { Rodape } from './Rodape';
-import sobre from './sobre.jpg';
 
 export function PaginaCadastro() {
 

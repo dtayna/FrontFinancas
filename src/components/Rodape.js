@@ -1,8 +1,8 @@
 import React, { ReactNode, useState } from "react";
 import { isDOMComponent } from "react-dom/test-utils";
 import { useForm } from "react-hook-form";
-import './Rodape.css';
-import './Geral.css';
+import '../styles/Rodape.css';
+import '../styles/Geral.css';
 
 export function Rodape() {
     return(

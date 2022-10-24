@@ -1,7 +1,7 @@
-import './Geral.css'
+import '../styles/Geral.css';
 import { MenuExterno } from './MenuExterno';
 import { Rodape } from './Rodape';
-import sobre from './sobre.jpg'
+import sobre from '../images/sobre.jpg';
 
 export function PaginaSobre() {
     return (
