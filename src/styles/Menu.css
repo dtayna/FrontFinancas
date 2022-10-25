@@ -4,6 +4,30 @@
     padding: 1%;
 }
 
+.menu-lateral-style{
+    background-color: #387c91;
+    min-height: 600px;
+    height: 100%;
+    padding: 1%;
+}
+
+.menu-lateral-item{
+    border-bottom-style: solid;
+    border-bottom-color: #336e80;
+    border-bottom-width: thin;
+    width: 100%;
+    margin-left: 2%;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    color: #f0f0f0;
+}
+
+.menu-lateral-item:active{
+    background-color: #336e80;
+}
+
 .left{
     float: left;
 }

@@ -2,9 +2,9 @@ import '../styles/Geral.css';
 
 export function PaginaInvestimentos() {
     return (
-      <div>
-          <h1>Investimentos</h1>
-      </div>
+         <div className="col-8 col-lg-10">
+          <h1>investimentos</h1>
+          </div>
     );
   }
   
