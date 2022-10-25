@@ -3,6 +3,7 @@ import { isDOMComponent } from "react-dom/test-utils";
 import { useForm } from "react-hook-form";
 import { PaginaPrincipal } from './PaginaPrincipal';
 import { PaginaInvestimentos} from './PaginaInvestimentos';
+import logotipo3 from '../images/logotipo3.png';
 import {
   BrowserRouter as Router,
   Switch,

@@ -6,9 +6,11 @@ import '../styles/Geral.css';
 
 export function Rodape() {
     return(
+        
         <div className="row">
+            
             <div className="rodape-style h-white">
-                <div className="espaco0"></div>
+                <div className="espaco00"></div>
                 <div className="row center">
                     <div className="col-12 col-sm-4">
                         <h5>Sobre</h5>
@@ -35,9 +37,13 @@ export function Rodape() {
                              <p> Instagram: blabla</p>
                         </div>
                 </div>
-                <br></br>
             </div>
+            <div className="color-gray-2 row  h-white center padding-top-1">
+                <p>Instituto Metrópole Digital - UFRN</p>
+            </div>
+            
       </div>
+
     );
     };
   export default Rodape;
