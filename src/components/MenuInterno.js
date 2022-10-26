@@ -20,6 +20,12 @@ export function MenuInterno() {
         <div className="menu-item left">
           Logo
       </div>
+      <div className="menu-item right">
+        Sair
+      </div>
+      <div className="menu-item right">
+        Perfil
+      </div>
     </div>
     </div>
   );

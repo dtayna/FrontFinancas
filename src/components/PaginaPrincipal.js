@@ -8,9 +8,12 @@ import { FormGanho } from "./FormGanho";
 
 export function PaginaPrincipal() {
 
+
+  //Tab para formularios de Ganho/Gasto
+
   const [activeTab, setActiveTab] = useState("gastos");
 
-  const tabinativa =  " col-2 center border-t-radius color-blue h-white";
+  const tabinativa =  "col-2 center border-t-radius color-blue h-white";
   const  tabativa = "border-tlr-thin-radius col-2 center border-t-radius z-index-sup white h-blue";
 
   const gastosTab = () => {
@@ -20,6 +23,8 @@ export function PaginaPrincipal() {
   const ganhosTab = () => {
     setActiveTab("ganhos");
   };
+
+  // TELA PRINCIPAL 
 
     return (
       <div className="col-8 col-lg-10">

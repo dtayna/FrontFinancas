@@ -12,7 +12,7 @@ export function PaginaInterna() {
     return (
       <div>
         <MenuInterno/>
-        <div className="row">
+        <div className="row" id="wraper">
             <MenuLateral/>
         </div>
         <Rodape/>

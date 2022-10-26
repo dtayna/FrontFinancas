@@ -59,7 +59,7 @@ export function FormGanho() {
                         </div>
 
                         <div className="col-3">
-                        <input type="button" className="margin-lr-5 margin-t-5 botao-cancel" value="Cancelar"/>
+                        <input type="reset" className="margin-lr-5 margin-t-5 botao-cancel" value="Cancelar"/>
                         </div>
 
                         <div className="col-3">
