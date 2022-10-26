@@ -1,7 +1,7 @@
 import '../styles/Geral.css';
 import { MenuExterno } from './MenuExterno';
 import { Rodape } from './Rodape';
-import sobre from '../images/sobre.jpg';
+import sobre1 from '../images/sobre1.jpg';
 
 export function PaginaSobre() {
     return (
@@ -11,7 +11,7 @@ export function PaginaSobre() {
           </div>
           <div className="conteudo row">
             <div className="col-1 espaco1"></div>
-            <img className="col-5" src={sobre}></img>
+            <img className="col-5" src={sobre1}></img>
             <div className="col-1 espaco1"></div>
             <div className="col-4 espaco1">
                 <h1 className="h-gray-1">Gerencie suas Finanças!</h1>
