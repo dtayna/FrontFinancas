@@ -24,11 +24,6 @@ export function MenuLateral() {
                             Home
                         </div>
                     </Link>
-                    <Link to="/contas">
-                        <div className="menu-lateral-item left">
-                            Contas
-                        </div>
-                    </Link>
                     <Link to="/investimentos">
                         <div className="menu-lateral-item left">
                             Investimentos
