@@ -16,6 +16,7 @@
     background-color: #64c733;
 }
 
+
 .white{
     background-color: #ffffff
 }
@@ -101,6 +102,14 @@
     margin-top:10%;
 }
 
+.margin-b-negativa{
+    margin-bottom: -5%;
+}
+
+.z-index-sup{
+    z-index: 1;
+}
+
 
 .border-thin{
     border-radius: 10px;
@@ -115,6 +124,41 @@
     border-bottom-style: solid;
     
 }
+
+.border-tr-thin-radius{
+    border-top-color: #a4b5b9;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-right-color: #a4b5b9;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+}
+
+.border-tlr-thin-radius{
+    border-top-color: #a4b5b9;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-left-color: #a4b5b9;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-right-color: #a4b5b9;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+}
+
+.border-t-radius{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+}
+
+
 
 .botao-sub-menor{
     background-color: #64c733;

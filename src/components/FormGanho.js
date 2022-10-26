@@ -5,7 +5,7 @@ import { isDOMComponent } from "react-dom/test-utils";
 import { useForm } from "react-hook-form";
 
 
-export function FormGasto() {
+export function FormGanho() {
 
     const [errorMessages, setErrorMessages] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -20,7 +20,7 @@ export function FormGasto() {
                 <form>
                      <div className="row border-b-thin">
                         <div className="col-5 ">
-                            <h3>Gasto</h3>
+                            <h3>Ganho</h3>
                          </div>
                     </div>
                     <div className="row espaco00"></div>
@@ -43,7 +43,7 @@ export function FormGasto() {
                         </div>
                         <div className="col-3">
                             <div className="input-container margin-lr-5">
-                                <label>Data de Vencimento: </label>
+                                <label>Data de Entrada: </label>
                                 <br></br>
                                 <input type="text" className="inputs-interno" name="datavencimento" required />
                                 {renderErrorMessage("uname")}
@@ -55,22 +55,7 @@ export function FormGasto() {
                     <br></br>
                     <div className="row">
 
-                        <div className="col-4">
-                            <label> Tipo de gasto: </label>
-                            <br></br>
-                            <select className="form-select" name="tipo" >
-                                <option value={0}>Alimentação</option>
-                                <option value={1}>Saúde</option>
-                            </select>
-                        </div>
-                        <div className="col-2">
-                            <label>Status: </label>
-                            <br></br>
-                            <select className="form-select" name="status" >
-                                <option value={1}>Pendente</option>
-                                <option value={1}>Atrasado</option>
-                                <option value={1}>Pago</option>
-                            </select>
+                        <div className="col-6">
                         </div>
 
                         <div className="col-3">
@@ -86,4 +71,4 @@ export function FormGasto() {
     );
   }
   
-  export default FormGasto;
+  export default FormGanho;

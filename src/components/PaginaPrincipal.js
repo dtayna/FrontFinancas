@@ -1,8 +1,26 @@
 import '../styles/Geral.css';
 import '../styles/Principal.css';
+import React, { ReactNode, useState } from "react";
+import { isDOMComponent } from "react-dom/test-utils";
+import { useForm } from "react-hook-form";
 import { FormGasto } from "./FormGasto";
+import { FormGanho } from "./FormGanho";
 
 export function PaginaPrincipal() {
+
+  const [activeTab, setActiveTab] = useState("gastos");
+
+  const tabinativa =  " col-2 center border-t-radius color-blue h-white";
+  const  tabativa = "border-tlr-thin-radius col-2 center border-t-radius z-index-sup white h-blue";
+
+  const gastosTab = () => {
+    setActiveTab("gastos");
+  };
+
+  const ganhosTab = () => {
+    setActiveTab("ganhos");
+  };
+
     return (
       <div className="col-8 col-lg-10">
 
@@ -14,7 +32,7 @@ export function PaginaPrincipal() {
           </div>
           <div className="col-4 div-sel-conta right">
           <form>
-              <select className="form-select " >
+              <select className="form-select" name="conta">
                 <option value={1}>Conta BB</option>
                 <option value={1}>Conta Nubank</option>
               </select>
@@ -23,11 +41,20 @@ export function PaginaPrincipal() {
         </div>
 
         <div className="row espaco0"></div>
+        <div className="row">
+          <div className="col-7"></div>
+          <div onClick={gastosTab} className={activeTab === "gastos" ? tabativa : tabinativa}> 
+            <h3>Gasto</h3>
+          </div>
+          <div onClick={ganhosTab} className={activeTab === "gastos" ? tabinativa : tabativa}> 
+             <h3>Ganho</h3>
+          </div>
+        </div>
         <div className="row div-form-gasto ">
           <div className="col-1"></div>
-          <div className="col-10 border-thin">
+          <div className="col-10 border-thin white ">
             <div className="row espaco00"></div>
-            <FormGasto/>
+            {activeTab === "gastos" ? <FormGasto /> : <FormGanho />}
             <div className="row espaco00"></div>
           </div>
           <div className="col-1"></div>
@@ -38,7 +65,6 @@ export function PaginaPrincipal() {
         <br></br>
           <h1>principal</h1>
           <p>
-          cadastro despesas/gastos; cadastro ganhos;<br></br>
            tabela ou lista de despesas;<br></br> lista ganhos;<br></br>
             
           </p>
