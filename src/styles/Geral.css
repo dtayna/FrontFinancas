@@ -86,6 +86,57 @@
   cursor: pointer;
 }
 
+.margin-lr-5{
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+}
+
+.margin-t-5{
+    margin-top:5%;
+}
+
+
+.margin-t-10{
+    margin-top:10%;
+}
+
+
+.border-thin{
+    border-radius: 10px;
+    border-color: #a4b5b9;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.border-b-thin{
+    border-bottom-color: #a4b5b9;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    
+}
+
+.botao-sub-menor{
+    background-color: #64c733;
+    color: white;
+    font-size: 20px;
+    padding: 10px 60px;
+    border-radius: 5px;
+    border-width: 0px;
+    cursor: pointer;
+  }
+
+.botao-cancel{
+    background-color: #c73333;
+    color: white;
+    font-size: 20px;
+    padding: 10px 60px;
+    border-radius: 5px;
+    border-width: 0px;
+    cursor: pointer;
+  }
+  
+
 .inputs{
     background: transparent;
     width: 100%;
@@ -97,6 +148,19 @@
     margin: 10px 0px;
     cursor: pointer;
   }
+
+.inputs-interno{
+    background: transparent;
+    width: 100%;
+    font-size: 20px;
+    padding: 5px 20px;
+    border-radius: 10px;
+    border-color: #a4b5b9;
+    border-width: 1px;
+    border-style: solid;
+    margin: 10px 0px;
+    cursor: pointer;
+}
 
 .conteudo-login{
     background-image: url("../images/fundo3.jpg");

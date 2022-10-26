@@ -7,7 +7,7 @@ import { MenuExterno } from "./components/MenuExterno";
 
 function App() {
   return (
-    <PaginaExterna/>
+    <PaginaInterna/>
   );
 }
 
