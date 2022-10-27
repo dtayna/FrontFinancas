@@ -76,16 +76,6 @@
     text-align: center;
 }
 
-.botao-sub{
-  background-color: #64c733;
-  color: white;
-  font-size: 20px;
-  padding: 10px 60px;
-  border-radius: 5px;
-  border-width: 0px;
-  margin: 10px 0px;
-  cursor: pointer;
-}
 
 .margin-lr-5{
     margin-left: 5%;
@@ -158,6 +148,17 @@
     
 }
 
+.botao-sub{
+    background-color: #64c733;
+    color: white;
+    font-size: 20px;
+    padding: 10px 60px;
+    border-radius: 5px;
+    border-width: 0px;
+    margin: 10px 0px;
+    cursor: pointer;
+  }
+
 
 
 .botao-sub-menor{
@@ -177,6 +178,7 @@
     padding: 10px 60px;
     border-radius: 5px;
     border-width: 0px;
+    margin-left: 10px 0px;
     cursor: pointer;
   }
   

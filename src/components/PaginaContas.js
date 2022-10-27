@@ -1,9 +1,21 @@
 import '../styles/Geral.css';
+import FormConta from './FormConta';
+
 
 export function PaginaContas() {
     return (
       <div className="col-8 col-lg-10">
-          <h1>Contas</h1>
+        <div className="row espaco0"></div>
+            <div className="row div-form-gasto ">
+              <div className="col-2"></div>
+              <div className="col-8 border-thin white ">
+                <div className="row espaco00"></div>
+                <FormConta/>
+                <div className="row espaco00"></div>
+              </div>
+              <div className="col-2"></div>
+          </div>
+        <div className="row espaco0"></div>
       </div>
     );
   }

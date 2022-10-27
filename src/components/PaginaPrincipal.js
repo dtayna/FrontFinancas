@@ -6,8 +6,22 @@ import { useForm } from "react-hook-form";
 import { FormGasto } from "./FormGasto";
 import { FormGanho } from "./FormGanho";
 
+
 export function PaginaPrincipal() {
 
+  //Mudança de Conta na tela principal
+
+  const saldos = [100.00, 200.00, 300.00];
+  const contas = [0, 1, 2];
+
+  const [activeConta, setActiveConta] = useState(0);
+  const [saldo, setSaldo] = useState(100.00);
+
+
+  const mudarConta = () => {
+    setActiveConta();
+    setSaldo(200.00);
+  };
 
   //Tab para formularios de Ganho/Gasto
 
@@ -31,15 +45,15 @@ export function PaginaPrincipal() {
 
         <div className="row div-conta">
           <div className="col-4 h-gray-1 div-saldo-conta">
-             <h4>Saldo: R$ 100,00</h4>
+             <h4>Saldo: R$ {saldo}</h4>
           </div>
           <div className="col-4">
           </div>
           <div className="col-4 div-sel-conta right">
           <form>
-              <select className="form-select" name="conta">
-                <option value={1}>Conta BB</option>
-                <option value={1}>Conta Nubank</option>
+              <select className="form-select" onChange={mudarConta} name="conta">
+                <option value={contas[0]}>Conta BB</option>
+                <option value={contas[1]}>Conta Nubank</option>
               </select>
               </form>
           </div>
