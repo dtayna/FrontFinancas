@@ -1,9 +1,6 @@
 import '../styles/Geral.css';
-import React, { ReactNode, useState } from "react";
-import { isDOMComponent } from "react-dom/test-utils";
-import { useForm } from "react-hook-form";
+import React, {  } from "react";
 import { MenuInterno } from './MenuInterno';
-import { PaginaPrincipal } from './PaginaPrincipal';
 import { Rodape } from './Rodape';
 import MenuLateral from './MenuLateral';
 

@@ -1,7 +1,5 @@
 import '../styles/Geral.css';
-import React, { ReactNode, useState } from "react";
-import { isDOMComponent } from "react-dom/test-utils";
-import { useForm } from "react-hook-form";
+import React, {  } from "react";
 import { MenuExterno } from './MenuExterno';
 import { PaginaLogin } from './PaginaLogin';
 import { Rodape } from './Rodape';

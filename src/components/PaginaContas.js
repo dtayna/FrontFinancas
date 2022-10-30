@@ -1,5 +1,6 @@
 import '../styles/Geral.css';
 import FormConta from './FormConta';
+import React from 'react';
 
 
 export function PaginaContas() {

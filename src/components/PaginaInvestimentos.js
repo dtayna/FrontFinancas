@@ -1,4 +1,5 @@
 import '../styles/Geral.css';
+import React from 'react';
 
 export function PaginaInvestimentos() {
     return (

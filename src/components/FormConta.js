@@ -1,8 +1,6 @@
 import '../styles/Geral.css';
 import '../styles/Principal.css';
-import React, { ReactNode, useState } from "react";
-import { isDOMComponent } from "react-dom/test-utils";
-import { useForm } from "react-hook-form";
+import React, { useState } from "react";
 
 
 export function FormConta() {

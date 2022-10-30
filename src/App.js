@@ -1,13 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
 import './styles/Geral.css'
-import { PaginaExterna} from './components/PaginaExterna';
 import { PaginaInterna} from './components/PaginaInterna';
-import { MenuExterno } from "./components/MenuExterno";
+import React from 'react';
+import {list} from './server';
+import PaginaCadastro from './components/PaginaCadastro';
 
 function App() {
   return (
-    <PaginaInterna/>
+    <PaginaCadastro/>
   );
 }
 
