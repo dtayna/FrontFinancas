@@ -1,6 +1,6 @@
 import '../styles/Geral.css';
 import React, { useState } from "react";
-import { api, list } from '../server';
+import {api}  from '../server';
 
 export function PaginaCadastro() {
 

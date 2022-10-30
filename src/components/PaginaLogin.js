@@ -1,18 +1,26 @@
 import '../styles/Geral.css';
-import React, { ReactNode, useState } from "react";
-import { isDOMComponent } from "react-dom/test-utils";
-import { useForm } from "react-hook-form";
-import { MenuExterno } from './MenuExterno';
-import { Rodape } from './Rodape';
+import React, { useState } from "react";
+import {api} from '../server';
 
 export function PaginaLogin() {
 
     const [errorMessages, setErrorMessages] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [userLogin, setUserLogin] = useState({login:'', password:'' })
 
     const renderErrorMessage = (name) => name === errorMessages.name && (
     <div className="error">{errorMessages.message}</div>
   );
+
+  const loggerUser =  async () => {
+    const response = await api.post("user/login", userLogin);
+    if(response.status == 200){
+        console.log(response.data) 
+    }else{
+        console.log("erro ao solicitar login!") 
+    }
+
+  }
 
     return (
       <div  className='conteudo-login '>
@@ -27,19 +35,23 @@ export function PaginaLogin() {
                     <form>
                     <div className="input-container">
                         <label>Username: </label>
-                        <input type="text" className="inputs" name="username" required />
+                        <input type="text" className="inputs" name="username" required 
+                            onChange={(e) => setUserLogin({...userLogin, login: e.target.value})}
+                        />
                         {renderErrorMessage("uname")}
                     </div>
                     <div className="input-container">
                         <label>Password: </label>
-                         
-                        <input type="password" className="inputs" name="password" required />
+                        <input type="password" className="inputs" name="password" required 
+                            onChange={(e) => setUserLogin({...userLogin, password: e.target.value})}
+                        />
                         {renderErrorMessage("pass")}
                     </div>
                    
                    
                     <div className="center">
-                        <input type="submit" className="botao-sub" value="Entrar"/>
+                        <input type="submit" className="botao-sub" value="Entrar" 
+                        onClick={(e)=> {e.preventDefault(); loggerUser()}}/>
                     </div>
                    
                     <p className="right">Esqueceu sua senha?</p>
