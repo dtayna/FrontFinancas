@@ -72,6 +72,11 @@
 .padding-top-1{
     padding-top: 1%;
 }
+
+.padding-l-1{
+    padding-left: 1%;
+    padding-right: 1%;
+}
 .center{
     text-align: center;
 }
@@ -112,6 +117,28 @@
     border-bottom-color: #a4b5b9;
     border-bottom-width: 1px;
     border-bottom-style: solid;
+    
+}
+
+.border-t-thin{
+    border-top-color: #a4b5b9;
+    border-top-width: 1px;
+    border-top-style: solid;
+    
+}
+
+.border-r-thin{
+    border-right-color: #a4b5b9;
+    border-right-width: 1px;
+    border-right-style: solid;
+    
+}
+
+
+.border-l-thin{
+    border-left-color: #a4b5b9;
+    border-left-width: 1px;
+    border-left-style: solid;
     
 }
 

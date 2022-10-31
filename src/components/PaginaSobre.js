@@ -2,6 +2,7 @@ import '../styles/Geral.css';
 import { MenuExterno } from './MenuExterno';
 import { Rodape } from './Rodape';
 import sobre1 from '../images/sobre1.jpg';
+import React from 'react';
 
 export function PaginaSobre() {
     return (

@@ -1,5 +1,13 @@
 import React, {  } from "react";
 import '../styles/Menu.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Routes,
+  Link
+} from "react-router-dom";
+import { PaginaExterna} from './PaginaExterna';
 
 export function MenuInterno() {
   return(
