@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'http://localhost:8080/api/';
+const baseURL = 'http://localhost:8080/api';
 
 
 export const api = axios.create({
@@ -9,6 +9,7 @@ export const api = axios.create({
    'Content-Type': 'application/json',
   },
 });
+ 
 
 
 export const list = async (endPoint) => {

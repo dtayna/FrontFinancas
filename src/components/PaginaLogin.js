@@ -13,7 +13,8 @@ export function PaginaLogin() {
   );
 
   const loggerUser =  async () => {
-    const response = await api.post("user/login", userLogin);
+    const response = await api.post("/login", userLogin);
+    console.log(response)
     if(response.status == 200){
         console.log(response.data) 
     }else{
