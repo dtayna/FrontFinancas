@@ -53,7 +53,7 @@ export function MenuLateral() {
             </div>
         </div>
         <Routes>
-          <Route path='/' element={<PaginaPrincipal/>}/>
+          <Route path='/paginaprincipal' element={<PaginaPrincipal/>}/>
           <Route path='/investimentos' element={<PaginaInvestimentos/>}/>
           <Route path='/contas' element={<PaginaContas/>}/>
         </Routes>

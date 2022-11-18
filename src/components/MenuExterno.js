@@ -24,7 +24,7 @@ export function MenuExterno() {
         Logo
         </div>
         </Link>
-        <Link to="/"> <div className="menu-item right" onclick="">
+        <Link to="/login"> <div className="menu-item right" onclick="">
        Login
         </div>
         </Link>
@@ -35,7 +35,7 @@ export function MenuExterno() {
       </div>
       <Routes>
           <Route path='/sobre' element={<PaginaSobre/>}/>
-          <Route path='/' element={<PaginaLogin/>}/>
+          <Route path='/login' element={<PaginaLogin/>}/>
           <Route path='/cadastro' element={<PaginaCadastro/>}/>
         </Routes>
       </Router>

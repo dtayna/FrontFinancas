@@ -1,7 +1,7 @@
 import '../styles/Geral.css';
 import React, { useState } from "react";
 import {api} from '../server';
-
+import { Redirect } from 'react-router'
 export function PaginaLogin() {
 
     const [errorMessages, setErrorMessages] = useState({});
@@ -13,9 +13,10 @@ export function PaginaLogin() {
   );
 
   const loggerUser =  async () => {
-    const response = await api.post("user/login", userLogin);
+    const response = await api.post("/login", userLogin);
+    console.log(response)
     if(response.status == 200){
-        console.log(response.data) 
+        console.log(response.data)
     }else{
         console.log("erro ao solicitar login!") 
     }
@@ -64,6 +65,7 @@ export function PaginaLogin() {
                 <br></br>
             </div>
         </div>
+
     );
   }
   
