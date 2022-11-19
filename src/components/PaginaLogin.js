@@ -1,6 +1,6 @@
 import '../styles/Geral.css';
-import React, { useState } from "react";
-import {api} from '../server';
+import React, { useState, useContext } from "react";
+import { AuthContext } from '../context/auth';
 
 export function PaginaLogin() {
 
@@ -8,19 +8,19 @@ export function PaginaLogin() {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [userLogin, setUserLogin] = useState({login:'', password:'' })
 
+    const { signIn, user } = useContext(AuthContext);
+
     const renderErrorMessage = (name) => name === errorMessages.name && (
     <div className="error">{errorMessages.message}</div>
   );
 
   const loggerUser =  async () => {
-    const response = await api.post("/login", userLogin);
-    console.log(response)
-    if(response.status == 200){
-        console.log(response.data) 
+    const userLogged = await signIn(userLogin.login, userLogin.password);
+    if(userLogged){
+        console.log("usuário:", user) 
     }else{
         console.log("erro ao solicitar login!") 
     }
-
   }
 
     return (

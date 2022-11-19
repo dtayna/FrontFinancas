@@ -3,14 +3,13 @@ import axios from 'axios';
 const baseURL = 'http://localhost:8080/api';
 
 
+//importar base url das variaveis de ambiente
 export const api = axios.create({
   baseURL: `${baseURL}`,
   headers: {
    'Content-Type': 'application/json',
   },
 });
- 
-
 
 export const list = async (endPoint) => {
   let res = null;
