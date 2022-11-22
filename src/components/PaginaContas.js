@@ -1,7 +1,7 @@
 import '../styles/Geral.css';
 import FormConta from './FormConta';
 import React from 'react';
-
+import { ItemConta } from "./ItemConta";
 
 export function PaginaContas() {
     return (
@@ -16,8 +16,17 @@ export function PaginaContas() {
               </div>
               <div className="col-2"></div>
           </div>
-        <div className="row espaco0"></div>
+        <div className="row">
+        <div className="col-2"></div>
+          <div className="col-8">
+            <ItemConta/>
+            <ItemConta/>
+          </div>
+        <div className="col-1"></div>
       </div>
+      <div className="row espaco0"></div>
+      </div>
+      
     );
   }
   

@@ -17,8 +17,8 @@ function App() {
      // <RoutesApp />
     
    
-     //<PaginaExterna/>
-     <PaginaInterna/>
+     <PaginaExterna/>
+     //<PaginaInterna/>
   );
 }
 
