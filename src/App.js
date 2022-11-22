@@ -14,10 +14,10 @@ import RoutesApp from './routes/RoutesApp';
 function App() {
   return (
   
-     // <RoutesApp />
+     <RoutesApp />
     
    
-     <PaginaExterna/>
+    // <PaginaExterna/>
      //<PaginaInterna/>
   );
 }

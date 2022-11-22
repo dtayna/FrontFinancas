@@ -1,9 +1,9 @@
 import '../styles/Geral.css';
 import React, { useState } from "react";
 import {api} from '../server';
-import { Link, useNavigate } from "react-router-dom";
+import { Link, redirect, useNavigate } from "react-router-dom";
 
-export function PaginaLogin(){
+export function PaginaLogin({pageLoginToMenu}){
 
     const [errorMessages, setErrorMessages] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -14,13 +14,12 @@ export function PaginaLogin(){
     <div className="error">{errorMessages.message}</div>
   );
 
-
         const loggerUser =  async () => {
             const response = await api.post("/login", userLogin);
             console.log(response)
             if(response.status == 200){
                 console.log(response.data)
-                navigate("/");
+                pageLoginToMenu(response.data)
             }else{
                 console.log("erro ao solicitar login!")
             }

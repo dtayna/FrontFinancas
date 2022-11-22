@@ -4,8 +4,9 @@ import { MenuInterno } from './MenuInterno';
 import { Rodape } from './Rodape';
 import MenuLateral from './MenuLateral';
 
-export function PaginaInterna() {
+export function PaginaInterna({pageRoutesToInterna}) {
 
+    console.log(pageRoutesToInterna, "chegou em interna")
     return (
       <div>
         <MenuInterno/>
