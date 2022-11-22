@@ -6,6 +6,9 @@ import MenuLateral from './MenuLateral';
 
 export function PaginaInterna({pageRoutesToInterna}) {
 
+  const pageInternaToRoutes = (logado) => {
+   
+ }
     console.log(pageRoutesToInterna, "chegou em interna")
     return (
       <div>

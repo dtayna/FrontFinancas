@@ -20,7 +20,7 @@ export function RoutesApp() {
   return(
 
     <div>
-      {logado=== "externa" ? <PaginaExterna pageExternaToRoutes={pageExternaToRoutes} /> : <PaginaInterna pageRoutesToInterna={page}/>}
+      {page === "externa" ? <PaginaExterna pageExternaToRoutes={pageExternaToRoutes} /> : <PaginaInterna pageRoutesToInterna={page}/>}
     </div>
     
    )
