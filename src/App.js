@@ -6,13 +6,19 @@ import React from 'react';
 import {list} from './server';
 import PaginaCadastro from './components/PaginaCadastro';
 import PaginaLogin from './components/PaginaLogin';
-import Routes from "./routes/Routes";
+import PaginaPrincipal from './components/PaginaPrincipal';
+import {  BrowserRouter as Router,  Routes,  Route} from "react-router-dom";
+import PaginaSobre from './components/PaginaSobre';
+import RoutesApp from './routes/RoutesApp';
+
 function App() {
   return (
-    //<PaginaInterna/>
-    <PaginaExterna/>
-   // <Routes/>
+  
+     // <RoutesApp />
     
+   
+     //<PaginaExterna/>
+     <PaginaInterna/>
   );
 }
 

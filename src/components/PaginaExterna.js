@@ -11,9 +11,10 @@ export function PaginaExterna() {
     return (
       <div>
         <MenuExterno/>
+        
         <Rodape/>
       </div>
     );
   }
   
-  export default PaginaLogin;
+  export default PaginaExterna;

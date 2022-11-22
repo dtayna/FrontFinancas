@@ -19,7 +19,7 @@ export function MenuLateral() {
         <div className="menu-lateral-style col-4 col-lg-2">
             <div className="row">
                 <div className="col-12">
-                    <Link to="/">
+                    <Link to="/home">
                         <div className="menu-lateral-item left">
                             Home
                         </div>
@@ -34,17 +34,17 @@ export function MenuLateral() {
                             Investimentos
                         </div>
                     </Link>
-                    <Link to="/">
+                    <Link to="/emprestimos">
                         <div className="menu-lateral-item left">
                             Empréstimos
                         </div>
                     </Link>
-                    <Link to="/">
+                    <Link to="/relatorios">
                         <div className="menu-lateral-item left">
                             Relatórios
                         </div>
                     </Link>
-                    <Link to="/">
+                    <Link to="/declaracao">
                         <div className="menu-lateral-item left">
                            Imposto de Renda
                         </div>
@@ -53,7 +53,8 @@ export function MenuLateral() {
             </div>
         </div>
         <Routes>
-          <Route path='/paginaprincipal' element={<PaginaPrincipal/>}/>
+            <Route path='/home' element={<PaginaPrincipal/>}/>
+          <Route path='/contas' element={<PaginaPrincipal/>}/>
           <Route path='/investimentos' element={<PaginaInvestimentos/>}/>
           <Route path='/contas' element={<PaginaContas/>}/>
         </Routes>

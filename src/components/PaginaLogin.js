@@ -1,27 +1,30 @@
 import '../styles/Geral.css';
 import React, { useState } from "react";
 import {api} from '../server';
-import { Redirect } from 'react-router'
-export function PaginaLogin() {
+import { Link, useNavigate } from "react-router-dom";
+
+export function PaginaLogin(){
 
     const [errorMessages, setErrorMessages] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [userLogin, setUserLogin] = useState({login:'', password:'' })
+    const navigate = useNavigate();
 
     const renderErrorMessage = (name) => name === errorMessages.name && (
     <div className="error">{errorMessages.message}</div>
   );
 
-  const loggerUser =  async () => {
-    const response = await api.post("/login", userLogin);
-    console.log(response)
-    if(response.status == 200){
-        console.log(response.data)
-    }else{
-        console.log("erro ao solicitar login!") 
-    }
 
-  }
+        const loggerUser =  async () => {
+            const response = await api.post("/login", userLogin);
+            console.log(response)
+            if(response.status == 200){
+                console.log(response.data)
+                navigate("/");
+            }else{
+                console.log("erro ao solicitar login!")
+            }
+        }
 
     return (
       <div  className='conteudo-login '>
