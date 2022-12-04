@@ -3,6 +3,7 @@ import { isDOMComponent } from "react-dom/test-utils";
 import { useForm } from "react-hook-form";
 import { PaginaPrincipal } from './PaginaPrincipal';
 import { PaginaInvestimentos} from './PaginaInvestimentos';
+import PaginaEmprestimo from "./PaginaEmprestimo";
 import { PaginaContas} from './PaginaContas';
 import {
   BrowserRouter as Router,
@@ -12,6 +13,7 @@ import {
   Link
 } from "react-router-dom";
 import '../styles/Menu.css';
+
 
 export function MenuLateral() {
   return(
@@ -29,14 +31,14 @@ export function MenuLateral() {
                             Contas
                         </div>
                     </Link>
-                    <Link to="/investimentos">
-                        <div className="menu-lateral-item left">
-                            Investimentos
-                        </div>
-                    </Link>
                     <Link to="/emprestimos">
                         <div className="menu-lateral-item left">
                             Empréstimos
+                        </div>
+                    </Link>
+                    <Link to="/investimentos">
+                        <div className="menu-lateral-item left">
+                            Investimentos
                         </div>
                     </Link>
                     <Link to="/relatorios">
@@ -55,6 +57,7 @@ export function MenuLateral() {
         <Routes>
             <Route path='/home' element={<PaginaPrincipal/>}/>
           <Route path='/contas' element={<PaginaContas/>}/>
+          <Route path='/emprestimos' element={<PaginaEmprestimo/>}/>
           <Route path='/investimentos' element={<PaginaInvestimentos/>}/>
           <Route path='/contas' element={<PaginaContas/>}/>
         </Routes>

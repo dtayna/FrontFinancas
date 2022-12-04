@@ -7,7 +7,7 @@ export function PaginaLogin({pageLoginToMenu}){
 
     const [errorMessages, setErrorMessages] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [userLogin, setUserLogin] = useState({login:'', password:'' })
+    const [userLogin, setUserLogin] = useState({login:'', password:'' });
     const navigate = useNavigate();
 
     const renderErrorMessage = (name) => name === errorMessages.name && (

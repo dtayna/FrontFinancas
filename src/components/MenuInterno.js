@@ -27,7 +27,7 @@ export function MenuInterno() {
      Sair
       </div>
       </Link>
-      <Link to="/paginaprincipal"><div className="menu-item right" onclick="">
+     <Link to="/home"><div className="menu-item right" onclick="">
       Perfil
       </div></Link>
     </div>
@@ -35,7 +35,7 @@ export function MenuInterno() {
     <Routes>
         <Route path='/sobre' element={<PaginaSobre/>}/>
         <Route path='/paginaexterna' element={<PaginaExterna/>}/>
-        <Route path='/paginaprincipal' element={<PaginaPrincipal/>}/>
+        <Route path='/home' element={<PaginaPrincipal/>}/>
       </Routes>
     </Router>
   );
