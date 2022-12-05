@@ -15,7 +15,12 @@ import {
 import '../styles/Menu.css';
 
 
-export function MenuLateral() {
+export function MenuLateral({pageInternaToMenu}) {
+    
+    const pageMenuToContas = (token) => {
+        pageInternaToMenu(token)
+    }
+    console.log(pageInternaToMenu, "chegou no menu lateral")
   return(
     <Router>
         <div className="menu-lateral-style col-4 col-lg-2">
@@ -56,7 +61,7 @@ export function MenuLateral() {
         </div>
         <Routes>
             <Route path='/home' element={<PaginaPrincipal/>}/>
-          <Route path='/contas' element={<PaginaContas/>}/>
+          <Route path='/contas' element={<PaginaContas pageMenuToContas={pageInternaToMenu}/>}/>
           <Route path='/emprestimos' element={<PaginaEmprestimo/>}/>
           <Route path='/investimentos' element={<PaginaInvestimentos/>}/>
           <Route path='/contas' element={<PaginaContas/>}/>

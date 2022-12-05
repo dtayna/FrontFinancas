@@ -5,13 +5,14 @@ import {api} from '../server';
 import RoutesApp from '../routes/RoutesApp';
 import { Link, redirect, useNavigate } from "react-router-dom";
 
-export function FormConta() {
+export function FormConta({pageContasToForm}) {
+
+    console.log(pageContasToForm,"finalmente form")
 
     const [errorMessages, setErrorMessages] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [conta, setConta] = useState({name:'', user_id:'token', value:'' });
+    const [conta, setConta] = useState({name:'', user_id:'24ca5f44-91c8-4ccc-8387-0a593dff30a8', value:'' });
     const navigate = useNavigate();
-
     const renderErrorMessage = (name) => name === errorMessages.name && (
     <div className="error">{errorMessages.message}</div>
   );
