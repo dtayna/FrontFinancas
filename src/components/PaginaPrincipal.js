@@ -5,6 +5,8 @@ import { isDOMComponent } from "react-dom/test-utils";
 import { useForm } from "react-hook-form";
 import { FormGasto } from "./FormGasto";
 import { FormGanho } from "./FormGanho";
+import { ItemGasto } from "./ItemGasto";
+import { ItemGanho } from "./ItemGanho";
 
 
 export function PaginaPrincipal() {
@@ -82,11 +84,27 @@ export function PaginaPrincipal() {
         <br></br>
         <br></br>
         <br></br>
-          <h1>principal</h1>
-          <p>
-           tabela ou lista de despesas;<br></br> lista ganhos;<br></br>
-            
-          </p>
+        <div className="row">
+        <div className="col-1"></div>
+          <div className="col-sm-5 col-10">
+            <div className="row">
+              <h2> Histórico Gastos</h2>
+            </div>
+           
+              <ItemGasto/>
+              <ItemGasto/>
+            </div>
+            <div className="col-1"></div>
+            <div className="col-sm-4 col-10">
+            <div className="row">
+              <h2> Histórico Ganhos</h2>
+            </div>
+            <ItemGanho/>
+              <ItemGanho/>
+            </div>
+            <div className="col-1"></div>
+        </div>
+        <div className="row espaco0"></div>
       </div>
     );
   }

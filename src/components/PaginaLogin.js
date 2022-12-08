@@ -2,11 +2,12 @@ import '../styles/Geral.css';
 import React, { useState, useContext } from "react";
 import { AuthContext } from '../context/auth';
 
-export function PaginaLogin() {
+export function PaginaLogin({pageLoginToMenu}){
 
     const [errorMessages, setErrorMessages] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [userLogin, setUserLogin] = useState({login:'', password:'' })
+    const [userLogin, setUserLogin] = useState({login:'', password:'' });
+    const navigate = useNavigate();
 
     const { signIn, user } = useContext(AuthContext);
 
@@ -65,6 +66,7 @@ export function PaginaLogin() {
                 <br></br>
             </div>
         </div>
+
     );
   }
   

@@ -1,6 +1,8 @@
 import React, { ReactNode, useState } from "react";
 import { isDOMComponent } from "react-dom/test-utils";
 import { useForm } from "react-hook-form";
+import {api} from '../server';
+import { redirect, useNavigate } from "react-router-dom";
 import { PaginaSobre } from './PaginaSobre';
 import { PaginaLogin } from './PaginaLogin';
 import { PaginaCadastro} from './PaginaCadastro';
@@ -14,8 +16,11 @@ import {
 
 import '../styles/Menu.css';
 
-export function MenuExterno() {
-  
+export function MenuExterno({pageMenuToExterna}) {
+
+  const pageLoginToMenu = (token) => {
+      pageMenuToExterna(token)
+  }
     return(
       <Router>
       <div className="row">
@@ -24,7 +29,7 @@ export function MenuExterno() {
         Logo
         </div>
         </Link>
-        <Link to="/"> <div className="menu-item right" onclick="">
+        <Link to="/login"> <div className="menu-item right" onclick="">
        Login
         </div>
         </Link>
@@ -35,7 +40,7 @@ export function MenuExterno() {
       </div>
       <Routes>
           <Route path='/sobre' element={<PaginaSobre/>}/>
-          <Route path='/' element={<PaginaLogin/>}/>
+          <Route path='/login' element={<PaginaLogin pageLoginToMenu={pageLoginToMenu}/>}/>
           <Route path='/cadastro' element={<PaginaCadastro/>}/>
         </Routes>
       </Router>

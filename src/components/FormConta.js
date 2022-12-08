@@ -1,16 +1,32 @@
 import '../styles/Geral.css';
 import '../styles/Principal.css';
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import {api} from '../server';
+import RoutesApp from '../routes/RoutesApp';
+import { Link, redirect, useNavigate } from "react-router-dom";
 
+export function FormConta({pageContasToForm}) {
 
-export function FormConta() {
+    console.log(pageContasToForm,"finalmente form")
 
     const [errorMessages, setErrorMessages] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
-
+    const [conta, setConta] = useState({name:'', user_id:'24ca5f44-91c8-4ccc-8387-0a593dff30a8', value:'' });
+    const navigate = useNavigate();
     const renderErrorMessage = (name) => name === errorMessages.name && (
     <div className="error">{errorMessages.message}</div>
   );
+
+        const saveConta =  async () => {
+            const response = await api.post("/conta", conta);
+            if(response.status == 200){
+                console.log(response.data)
+            }else{
+                console.log("erro ao tentar salvar conta")
+            }
+            
+        }
+
 
     return (
 
@@ -28,7 +44,7 @@ export function FormConta() {
                             <div className="input-container">
                                 <label>Nome: </label>
                                 <br></br>
-                                <input type="text" className="inputs-interno" name="nome" required />
+                                <input type="text" className="inputs-interno" name="nome" required onChange={(e) => setConta({...conta, name: e.target.value})}/>
                                 {renderErrorMessage("uname")}
                             </div>
                         </div>
@@ -36,7 +52,7 @@ export function FormConta() {
                             <div className="input-container">
                                 <label>Valor: </label>
                                 <br></br>
-                                <input type="text" className="inputs-interno" name="valor" required />
+                                <input type="double" className="inputs-interno" name="valor" id="valor" required onChange={(e) => setConta({...conta, value: e.target.value})} />
                                 {renderErrorMessage("uname")}
                             </div>
                         </div>
@@ -54,7 +70,7 @@ export function FormConta() {
                         </div>
 
                         <div className="col-4">
-                            <input type="submit" className="margin-lr-5 margin-t-5 botao-sub right" value="Cadastrar"/>
+                            <input type="submit" className="margin-lr-5 margin-t-5 botao-sub right" value="Cadastrar" onClick={(e)=> {e.preventDefault(); saveConta()}}/>
                         </div>
                     </div>
                     </form>

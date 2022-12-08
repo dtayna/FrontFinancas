@@ -2,14 +2,17 @@ import axios from 'axios';
 
 const baseURL = 'http://localhost:8080/api';
 
+//const token = localStorage.getItem('auth-token')
 
 //importar base url das variaveis de ambiente
 export const api = axios.create({
   baseURL: `${baseURL}`,
   headers: {
    'Content-Type': 'application/json',
+  // 'Authorization': `Bearer ${token}`,
   },
 });
+ 
 
 export const list = async (endPoint) => {
   let res = null;
@@ -48,5 +51,4 @@ export const findById = async (endPoint,  id) => {
     throw `Erro na chamada findById: ${id}`;
   }
 };
-
 
