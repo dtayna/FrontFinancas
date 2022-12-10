@@ -1,15 +1,34 @@
 import '../styles/Geral.css';
 import FormConta from './FormConta';
-import React from 'react';
+import React, {useState, useEffect, useContext, componentWillUnmount} from 'react';
 import { ItemConta } from "./ItemConta";
+import { api } from '../server';
 
-export function PaginaContas({pageMenuToContas}) {
-
-  const pageContasToForm = (token) => {
-    pageMenuToContas(token)
+class PaginaContas extends React.Component{
+  constructor(props) {
+    super(props)
+    this.state = {contas: []};
   }
 
-  console.log(pageMenuToContas," chegou em pg contas")
+   getContas = async () => {
+    var contas = []
+    const response = await api.get("/conta")
+    if(response.status == 200){
+       contas = response.data
+       this.setState({'contas': contas})
+    }else{
+        console.log("erro ao tentar listar constas")
+    }
+
+  }
+
+  componentDidMount() {
+    this.getContas()
+    console.log(this.state.contas)
+   
+  }
+
+  render(){
     return (
       <div className="col-8 col-lg-10">
         <div className="row espaco0"></div>
@@ -17,7 +36,7 @@ export function PaginaContas({pageMenuToContas}) {
               <div className="col-2"></div>
               <div className="col-8 border-thin white ">
                 <div className="row espaco00"></div>
-                <FormConta pageContasToForm={pageMenuToContas}/>
+                <FormConta/>
                 <div className="row espaco00"></div>
               </div>
               <div className="col-2"></div>
@@ -25,15 +44,14 @@ export function PaginaContas({pageMenuToContas}) {
         <div className="row">
         <div className="col-2"></div>
           <div className="col-8">
-            <ItemConta/>
-            <ItemConta/>
+            {this.state.contas.map(conta =><ItemConta conta={conta}/>)}
           </div>
         <div className="col-1"></div>
       </div>
       <div className="row espaco0"></div>
-      </div>
-      
-    );
-  }
+    </div>
+    
+  ) }
+}
   
   export default PaginaContas;

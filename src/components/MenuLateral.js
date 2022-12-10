@@ -1,10 +1,8 @@
 import React, { ReactNode, useState } from "react";
-import { isDOMComponent } from "react-dom/test-utils";
 import { useForm } from "react-hook-form";
 import { PaginaPrincipal } from './PaginaPrincipal';
 import { PaginaInvestimentos} from './PaginaInvestimentos';
 import PaginaEmprestimo from "./PaginaEmprestimo";
-import { PaginaContas} from './PaginaContas';
 import {
   BrowserRouter as Router,
   Switch,
@@ -61,10 +59,9 @@ export function MenuLateral({pageInternaToMenu}) {
         </div>
         <Routes>
             <Route path='/home' element={<PaginaPrincipal/>}/>
-          <Route path='/contas' element={<PaginaContas pageMenuToContas={pageInternaToMenu}/>}/>
+
           <Route path='/emprestimos' element={<PaginaEmprestimo/>}/>
           <Route path='/investimentos' element={<PaginaInvestimentos/>}/>
-          <Route path='/contas' element={<PaginaContas/>}/>
         </Routes>
     </Router>
   );
