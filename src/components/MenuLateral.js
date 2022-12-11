@@ -4,7 +4,9 @@ import { useForm } from "react-hook-form";
 import { PaginaPrincipal } from './PaginaPrincipal';
 import { PaginaInvestimentos} from './PaginaInvestimentos';
 import PaginaEmprestimo from "./PaginaEmprestimo";
-import { PaginaContas} from './PaginaContas';
+import PaginaDeclaracao from "./PaginaDeclaracao";
+import PaginaRelatorios from "./PaginaRelatorios";
+import PaginaContas from "./PaginaContas";
 import {
   BrowserRouter as Router,
   Switch,
@@ -61,10 +63,11 @@ export function MenuLateral({pageInternaToMenu}) {
         </div>
         <Routes>
             <Route path='/home' element={<PaginaPrincipal/>}/>
-          <Route path='/contas' element={<PaginaContas pageMenuToContas={pageInternaToMenu}/>}/>
+          <Route path='/contas' element={<PaginaContas/>}/>
           <Route path='/emprestimos' element={<PaginaEmprestimo/>}/>
           <Route path='/investimentos' element={<PaginaInvestimentos/>}/>
-          <Route path='/contas' element={<PaginaContas/>}/>
+          <Route path='/relatorios' element={<PaginaRelatorios/>}/>
+          <Route path='/declaracao' element={<PaginaDeclaracao/>}/>
         </Routes>
     </Router>
   );

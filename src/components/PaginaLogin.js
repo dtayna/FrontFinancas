@@ -1,29 +1,29 @@
 import '../styles/Geral.css';
-import React, { useState } from "react";
-import {api} from '../server';
-import { Link, redirect, useNavigate } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { AuthContext } from '../context/auth';
+import { useNavigate} from "react-router-dom";
 
 export function PaginaLogin({pageLoginToMenu}){
 
     const [errorMessages, setErrorMessages] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [userLogin, setUserLogin] = useState({login:'', password:'' });
+    const { signIn, user } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const renderErrorMessage = (name) => name === errorMessages.name && (
     <div className="error">{errorMessages.message}</div>
   );
 
-        const loggerUser =  async () => {
-            const response = await api.post("/login", userLogin);
-            console.log(response)
-            if(response.status == 200){
-                console.log(response.data)
-                pageLoginToMenu(response.data)
-            }else{
-                console.log("erro ao solicitar login!")
-            }
-        }
+  const loggerUser =  async () => {
+     const userLogged = await signIn(userLogin.login, userLogin.password);
+    if(userLogged){
+       console.log("usuário:", user) 
+       navigate("/contas")
+    }else{
+        console.log("erro ao solicitar login!") 
+    }
+  }
 
     return (
       <div  className='conteudo-login '>
@@ -50,12 +50,11 @@ export function PaginaLogin({pageLoginToMenu}){
                         />
                         {renderErrorMessage("pass")}
                     </div>
-                   
-                   
-                    <div className="center">
+                   <div className="center">
                         <input type="submit" className="botao-sub" value="Entrar" 
                         onClick={(e)=> {e.preventDefault(); loggerUser()}}/>
                     </div>
+        
                    
                     <p className="right">Esqueceu sua senha?</p>
                     <br></br>
@@ -67,7 +66,6 @@ export function PaginaLogin({pageLoginToMenu}){
                 <br></br>
             </div>
         </div>
-
     );
   }
   

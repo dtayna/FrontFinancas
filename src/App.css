@@ -27,7 +27,28 @@
 .App-link {
   color: #61dafb;
 }
-
+.declaracao-body {
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  padding: 10px 16px;
+  font-size: 14px;
+  background-color: transparent;
+  border: 1px solid #61dafb;
+  border-radius: 6px;
+  color: #61dafb;
+  font-weight: bold;
+  transition: ease-in 0.3s;
+}
+.btn:hover {
+  background-color: #61dafb;
+  color: #fff;
+  cursor: pointer;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +56,50 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+table {
+  width: 50%;
+  border-collapse: collapse;
+}
+
+caption{
+  text-align: center;
+  margin-left: 100;
+}
+
+thead th {
+  text-align: left;
+  border-bottom: 2px solid black;
+}
+
+thead button {
+  border: 0;
+  border-radius: none;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: inherit;
+  padding: 0.5em;
+  margin-bottom: 1px;
+}
+
+thead button.ascending::after {
+  content: '👇';
+  display: inline-block;
+  margin-left: 1em;
+}
+
+thead button.descending::after {
+  content: '☝️';
+  display: inline-block;
+  margin-left: 1em;
+}
+
+tbody td {
+  padding: 0.5em;
+  border-bottom: 1px solid #ccc;
+}
+
+tbody tr:hover {
+  background-color: #eee;
 }
