@@ -15,6 +15,7 @@ import {
   Link
 } from "react-router-dom";
 import '../styles/Menu.css';
+import { AuthProvider } from "../context/auth";
 
 
 export function MenuLateral({pageInternaToMenu}) {
@@ -24,6 +25,7 @@ export function MenuLateral({pageInternaToMenu}) {
     }
     console.log(pageInternaToMenu, "chegou no menu lateral")
   return(
+    <AuthProvider>
     <Router>
         <div className="menu-lateral-style col-4 col-lg-2">
             <div className="row">
@@ -70,6 +72,7 @@ export function MenuLateral({pageInternaToMenu}) {
           <Route path='/declaracao' element={<PaginaDeclaracao/>}/>
         </Routes>
     </Router>
+    </AuthProvider>
   );
   };
   export default MenuLateral;

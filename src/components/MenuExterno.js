@@ -15,6 +15,7 @@ import {
 } from "react-router-dom";
 
 import '../styles/Menu.css';
+import { AuthProvider } from "../context/auth";
 
 export function MenuExterno({pageMenuToExterna}) {
 
@@ -22,6 +23,7 @@ export function MenuExterno({pageMenuToExterna}) {
       pageMenuToExterna(token)
   }
     return(
+      <AuthProvider>
       <Router>
       <div className="row">
       <div className="menu-style">
@@ -29,7 +31,7 @@ export function MenuExterno({pageMenuToExterna}) {
         Logo
         </div>
         </Link>
-        <Link to="/"> <div className="menu-item right" onclick="">
+        <Link to="/login"> <div className="menu-item right" onclick="">
        Login
         </div>
         </Link>
@@ -40,10 +42,11 @@ export function MenuExterno({pageMenuToExterna}) {
       </div>
       <Routes>
           <Route path='/sobre' element={<PaginaSobre/>}/>
-          <Route path='/' element={<PaginaLogin pageLoginToMenu={pageLoginToMenu}/>}/>
+          <Route path='/login' element={<PaginaLogin pageLoginToMenu={pageLoginToMenu}/>}/>
           <Route path='/cadastro' element={<PaginaCadastro/>}/>
         </Routes>
       </Router>
+      </AuthProvider>
     );
     };
 
