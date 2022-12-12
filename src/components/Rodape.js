@@ -15,9 +15,9 @@ export function Rodape() {
                     <div className="col-12 col-sm-4">
                         <h5>Sobre</h5>
                         <br></br>
-                        <p>blablabla</p>
-                    <p>blulbu</p>
-                    <p>asknaskdkaks</p>
+                        <p>Controle de Contas/Ganhos/Gastos</p>
+                    <p>Controle de Empréstimos</p>
+                    <p>Controle de Investimentos</p>
                     <br></br>
                     </div>
                     <div className="col-12 col-sm-4">
@@ -31,10 +31,10 @@ export function Rodape() {
                     <div className="col-12 col-sm-4">
                         <h5>Contatos</h5>
                         <br></br>
-                            <p>Twitter: blabla</p>
-                            <p>E-mail: blabla@gmail.com</p>
+                            <p>E-mail: gerenciesuasfinancas@gmail.com</p>
                              <p> Telefone: 99999-9999</p>
-                             <p> Instagram: blabla</p>
+                             <p>Telegram: @gerenciesuasfinancas</p>
+                             <p> Instagram: @gerenciesuasfinancas</p>
                         </div>
                 </div>
             </div>

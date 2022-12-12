@@ -1,8 +1,33 @@
 import '../styles/Geral.css';
 import FormInvestimento from './FormInvestimento';
 import React from 'react';
+import {api}  from '../server';
 
-export function PaginaInvestimentos() {
+class PaginaInvestimentos extends React.Component{
+  constructor(props) {
+    super(props)
+    this.state = {investimentos: []};
+  }
+  
+   getInvestimento = async () => {
+    var investimentos = []
+    const response = await api.get("/investimentos")
+    if(response.status == 200){
+      investimentos = response.data
+       this.setState({'investimento': investimentos})
+    }else{
+        console.log("erro ao tentar listar investimentos")
+    }
+  
+  }
+  
+  componentDidMount() {
+    this.getInvestimento()
+    console.log(this.state.investimentos)
+   
+  }
+  
+  render(){
     return (
          <div className="col-8 col-lg-10">
             <div className="row espaco0"></div>
@@ -19,5 +44,5 @@ export function PaginaInvestimentos() {
           </div>
     );
   }
-  
+}
   export default PaginaInvestimentos;

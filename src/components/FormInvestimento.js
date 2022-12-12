@@ -1,11 +1,11 @@
 import '../styles/Geral.css';
 import '../styles/Principal.css';
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useStatem, useContext, useState } from "react";
 import { isDOMComponent } from "react-dom/test-utils";
 import { useForm } from "react-hook-form";
 import {api}  from '../server';
 import { Link, redirect, useNavigate } from "react-router-dom";
-
+import { AuthContext } from '../context/auth';
 
 export function FormInvestimento() {
 
@@ -20,22 +20,35 @@ export function FormInvestimento() {
         tipo_titulo:'',
         titulo:'',
         vencimento_titulo:'' });
-        const navigate = useNavigate();
+    //const navigate = useNavigate();
 
     const renderErrorMessage = (name) => name === errorMessages.name && (
     <div className="error">{errorMessages.message}</div>
   );
 
-        const saveInvestimento =  async () => {
+    const { user } = useContext(AuthContext);
+
+    const saveInvestimento =  async () => {
+        var investimentoObj = {corretora: investimento.corretora, data_investimento: investimento.data_investimento, id_investimento: investimento.id_investimento,
+            investido: investimento.investido, objetivo: investimento.objetivo, tipo_titulo: investimento.tipo_titulo, titulo: investimento.titulo, vencimento_titulo: investimento.vencimento_titulo,
+                       user_id: user? user.id: null}
+        const response = await api.post("/emprestimo", investimentoObj);
+        if(response.status == 200){
+            console.log(response.data)
+        }else{
+            console.log("erro ao tentar salvar investimento")
+        }
+    }
+
+
+       /* const saveInvestimento =  async () => {
             const response = await api.post("/investment", investimento);
             response.status == 200? 
             console.log(response.data)  : console.log("erro ao tentar salvar usuário")
             
-        }
+        }*/
 
     return (
-
-
                 <form>
                     <div  className='conteudo-investimento '></div>
                      <div className="row border-b-thin">

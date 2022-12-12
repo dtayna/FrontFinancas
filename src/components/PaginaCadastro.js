@@ -1,6 +1,7 @@
 import '../styles/Geral.css';
 import React, { useState } from "react";
 import {api}  from '../server';
+import { useNavigate } from "react-router-dom";
 
 export function PaginaCadastro() {
 
@@ -8,6 +9,7 @@ export function PaginaCadastro() {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [user, setUser] = useState({name: '', login: '', email: '', password: '', 
     confirmPassword:''})
+    //const navigate = useNavigate();
 
     const renderErrorMessage = (name) => name === errorMessages.name && (
     <div className="error">{errorMessages.message}</div>
@@ -18,6 +20,8 @@ export function PaginaCadastro() {
         const response = await api.post("user", user)
         response.status == 200? 
             console.log(response.data)  : console.log("erro ao tentar salvar usuário")
+            //navigate("/login")
+
     }else{
         console.log("senha inválida")
     }

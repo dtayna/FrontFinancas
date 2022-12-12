@@ -27,7 +27,7 @@ export function MenuExterno({pageMenuToExterna}) {
       <Router>
       <div className="row">
       <div className="menu-style">
-        <Link to="/sobre"><div className="menu-item left">
+        <Link to="/"><div className="menu-item left">
         Logo
         </div>
         </Link>
@@ -41,7 +41,7 @@ export function MenuExterno({pageMenuToExterna}) {
       </div>
       </div>
       <Routes>
-          <Route path='/sobre' element={<PaginaSobre/>}/>
+          <Route path='/' element={<PaginaSobre/>}/>
           <Route path='/login' element={<PaginaLogin pageLoginToMenu={pageLoginToMenu}/>}/>
           <Route path='/cadastro' element={<PaginaCadastro/>}/>
         </Routes>

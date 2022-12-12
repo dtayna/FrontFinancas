@@ -1,22 +1,22 @@
 export const data = [
     {
-      nome: "Mousepad",
-      qtdEstoque: 4,
-      qtdVendido: 10,
+      descricao: "CRA LTDA",
+      valor: "R$ 1000,00",
+      date: "10/08/2022",
     },
     {
-      nome: "Teclado",
-      qtdEstoque: 8,
-      qtdVendido: 12,
+      descricao: "SERVICO E PRESTACAO",
+      valor: "R$ 250,00",
+      date: "26/09/2022",
     },
     {
-      nome: "Monitor",
-      qtdEstoque: 2,
-      qtdVendido: 14,
+      descricao: "ASSISTENCIA MÉDICA",
+      valor: "R$ 1200,00",
+      date: "03/11/2022",
     },
     {
-      nome: "Mouse",
-      qtdEstoque: 15,
-      qtdVendido: 32,
+      descricao: "AUTOMÓVEL",
+      valor: "R$ 20.000,00",
+      date: "15/11/2022",
     }  
   ];

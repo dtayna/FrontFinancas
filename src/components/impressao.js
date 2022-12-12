@@ -12,24 +12,43 @@ export class Impressao {
     }
   
     CriaCorpoDocumento() {
-      const header = [
-        { text: 'Nome Produto', bold: true, fontSize: 9, margin: [0, 4, 0, 0] },
-        { text: 'Qtd. Estoque', bold: true, fontSize: 9, margin: [0, 4, 0, 0] },
-        { text: 'Qtd. Vendido', bold: true, fontSize: 9, margin: [0, 4, 0, 0] },
+
+      const header1 = [
+        { text: 'DADOS DO CONTRIBUINTE', bold: true, fontSize: 9, margin: [0, 4, 0, 0] },
+        { text: 'NOME:', bold: true, fontSize: 9, margin: [0, 4, 0, 0] },
+        { text: 'CPF:', bold: true, fontSize: 9, margin: [0, 4, 0, 0] },
       ];
+
+      const header = [
+        { text: 'DESCRIÇÃO', bold: true, fontSize: 9, margin: [0, 4, 0, 0] },
+        { text: 'VALOR', bold: true, fontSize: 9, margin: [0, 4, 0, 0] },
+        { text: 'DATA', bold: true, fontSize: 9, margin: [0, 4, 0, 0] },
+      ];
+
       const body = this.dadosParaImpressao.map((prod) => {
         return [
-          { text: prod.nome, fontSize: 8 },
-          { text: prod.qtdEstoque, fontSize: 8 },
-          { text: prod.qtdVendido, fontSize: 8 },
+          { text: prod.descricao, fontSize: 8 },
+          { text: prod.valor, fontSize: 8 },
+          { text: prod.date, fontSize: 8 },
         ];
       });
   
       const lineHeader = [
         {
           text:
-            '__________________________________________________________________________________',
-          alignment: 'center',
+            '______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________',
+          alignment: 'left',
+          fontSize: 5,
+          colSpan: 3,
+        },
+        {},
+        {},
+      ];
+      const lineHeader1 = [
+        {
+          text:
+            '______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________',
+          alignment: 'letf',
           fontSize: 5,
           colSpan: 3,
         },
@@ -37,7 +56,7 @@ export class Impressao {
         {},
       ];
   
-      let content = [header, lineHeader];
+      let content = [header1, lineHeader, header, lineHeader1];
       content = [...content, ...body];
       return content;
     }
@@ -49,12 +68,12 @@ export class Impressao {
         header: function () {
           return {
               margin: [14, 12, 14, 0],
-              layout: 'noBorders',
+              layout: 'Borders',
               table: {
                 widths: ['*'],
                 body: [                             
                   [
-                    { text: 'RELATÓRIO DE VENDAS', style: 'reportName' }
+                    { text: '     IMPOSTO SOBRE A RENDA - PESSOA FÍSICA EXERCÍCIO 2023                                                             ANO-CALENDÁRIO 2022', style: 'reportName' }
                   ]              
                 ],
               },
@@ -65,7 +84,7 @@ export class Impressao {
               layout: 'noBorders',
               table: {              
                 headerRows: 1,
-                widths: [ '*', 55, 55 ],
+                widths: [ '*', '*', '*' ],
         
                 body: corpoDocumento
               }
@@ -81,7 +100,7 @@ export class Impressao {
                   [
                     {
                       text:
-                        '_____________________________________________________________________________________________________________',
+                        '_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________',
                       alignment: 'center',
                       fontSize: 5,
                     },
@@ -96,7 +115,7 @@ export class Impressao {
                         margin: [3, 0],
                       },
                       {
-                        text: '© Lojinha de TI',
+                        text: '© Assinada eletrônicamente',
                         fontSize: 7,
                         alignment: 'center',
                       },

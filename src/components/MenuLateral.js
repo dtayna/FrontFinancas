@@ -2,7 +2,7 @@ import React, { ReactNode, useState } from "react";
 import { isDOMComponent } from "react-dom/test-utils";
 import { useForm } from "react-hook-form";
 import { PaginaPrincipal } from './PaginaPrincipal';
-import { PaginaInvestimentos} from './PaginaInvestimentos';
+import PaginaInvestimentos from './PaginaInvestimentos';
 import PaginaEmprestimo from "./PaginaEmprestimo";
 import PaginaDeclaracao from "./PaginaDeclaracao";
 import PaginaRelatorios from "./PaginaRelatorios";
