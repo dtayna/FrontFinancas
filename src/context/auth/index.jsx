@@ -41,6 +41,8 @@ export const AuthProvider = ({children}) => {
     const resUser = await api.get(`/user/login?userLogin=${userObj.login}`);
     if(resUser.status == 200){
       setUser(resUser.data)
+      console.log("user", resUser.data)
+      localStorage.setItem('user', resUser.data.id)
     }
   }
 

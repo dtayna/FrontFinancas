@@ -3,6 +3,9 @@ import FormInvestimento from './FormInvestimento';
 import React from 'react';
 import {api}  from '../server';
 
+
+const userId = localStorage.getItem('user')
+
 class PaginaInvestimentos extends React.Component{
   constructor(props) {
     super(props)
@@ -11,7 +14,7 @@ class PaginaInvestimentos extends React.Component{
   
    getInvestimento = async () => {
     var investimentos = []
-    const response = await api.get("/investimentos")
+    const response = await api.get(`/investimentos/user/${userId}`)
     if(response.status == 200){
       investimentos = response.data
        this.setState({'investimento': investimentos})

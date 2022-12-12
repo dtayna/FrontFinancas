@@ -18,7 +18,8 @@ export function FormConta() {
     const [conta, setConta] = useState({name:'', value:'' });
 
     const saveConta =  async () => {
-        var contaObj = {name: conta.name, value: conta.value, user_id: user? user.id: null}
+        let userId =  localStorage.getItem('user')
+        var contaObj = {name: conta.name, value: conta.value, user_id: userId}
         const response = await api.post("/conta", contaObj);
         if(response.status == 200){
             console.log(response.data)

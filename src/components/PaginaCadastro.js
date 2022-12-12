@@ -9,7 +9,7 @@ export function PaginaCadastro() {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [user, setUser] = useState({name: '', login: '', email: '', password: '', 
     confirmPassword:''})
-    //const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const renderErrorMessage = (name) => name === errorMessages.name && (
     <div className="error">{errorMessages.message}</div>
@@ -17,11 +17,10 @@ export function PaginaCadastro() {
 
   const saveUser =  async () => {
     if(user.confirmPassword == user.password){
-        const response = await api.post("user", user)
+        const response = await api.post("/user", user)
         response.status == 200? 
             console.log(response.data)  : console.log("erro ao tentar salvar usuário")
-            //navigate("/login")
-
+            navigate("/login")
     }else{
         console.log("senha inválida")
     }

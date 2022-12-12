@@ -4,15 +4,21 @@ import React, {useState, useEffect, useContext, componentWillUnmount} from 'reac
 import { ItemConta } from "./ItemConta";
 import { api } from '../server';
 
+
+
 class PaginaContas extends React.Component{
   constructor(props) {
     super(props)
     this.state = {contas: []};
   }
 
+
+
    getContas = async () => {
+    let userId =  localStorage.getItem('user')
+    console.log(userId)
     var contas = []
-    const response = await api.get("/conta")
+    const response = await api.get(`/conta/user/${userId}`)
     if(response.status == 200){
        contas = response.data
        this.setState({'contas': contas})

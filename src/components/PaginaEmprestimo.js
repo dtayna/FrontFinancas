@@ -3,6 +3,8 @@ import React from 'react';
 import { FormEmprestimo } from './FormEmprestimo';
 import {api}  from '../server';
 
+const userId = localStorage.getItem('user')
+
 class PaginaEmprestimo extends React.Component{
   constructor(props) {
   super(props)
@@ -11,7 +13,7 @@ class PaginaEmprestimo extends React.Component{
 
  getLoan = async () => {
   var loans = []
-  const response = await api.get("/emprestimo")
+  const response = await api.get(`/emprestimo/user/${userId}`)
   if(response.status == 200){
      loans = response.data
      this.setState({'emprestimos': loans})
