@@ -17,12 +17,12 @@ Telas:
 - Cadastro de contas bancárias
 - Gerenciamento de despesas/gastos/contas a pagar
 
-## Tecnologias
+## Tecnologias 💻
 
 - React
 - JavaScript
 
-## Como rodar:
+## Como rodar?
 
 Com node corretamente instalado, basta percorrer o caminho até a pasta com a aplicação e executar o comando 
 
